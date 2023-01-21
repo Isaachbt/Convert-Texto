@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Convert Texto</string>
+
+    <string name="LMaiscula">Letras Maiúsculas</string>
+    <string name="LMinuscula">Letras Minúsculas</string>
+    <string name="AoContrario">Frase ao contrario</string>
+    <string name="TrocarLetra">Substituir letras</string>
+    <string name="btn">Gerar</string>
+    <string name="aviso">Escolha uma das 4 opções a cima</string>
+    <string name="hintMudar">Mudar</string>
+    <string name="hintPor">Por</string>
+    <string name="editText">Digite a frase/palavra, aqui</string>
+</resources>
