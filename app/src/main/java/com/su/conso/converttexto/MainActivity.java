@@ -23,49 +23,32 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-
-        binding.rdTrocarLetra.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                Toast.makeText(MainActivity.this, "clicou2", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                Toast.makeText(MainActivity.this, "clicou", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                Toast.makeText(MainActivity.this, "clicou3", Toast.LENGTH_SHORT).show();
-            }
-        });
-
+        binding.layoutTrocarTxt.setVisibility(View.INVISIBLE);
       onclick();
     }
 
-    private void onclick(){
+    private void onclick() {
         binding.btnGerar.setOnClickListener(view1 -> {
-            try{
+            try {
                 text = binding.editText.getText().toString();
-                if (binding.rdMaiuscula.isChecked()){
+                if (binding.rdMaiuscula.isChecked()) {
                     binding.editText.setText(text.toUpperCase());
                     copiarVisibilidade();
-                }else if (binding.rdMinuscula.isChecked()){
+                } else if (binding.rdMinuscula.isChecked()) {
                     binding.editText.setText(text.toLowerCase());
                     copiarVisibilidade();
-                }else if (binding.rdAoContrario.isChecked()){
+                } else if (binding.rdAoContrario.isChecked()) {
                     String letraInvertida = new StringBuilder(text).reverse().toString();
                     binding.editText.setText(letraInvertida);
                     copiarVisibilidade();
-                }else if (binding.rdTrocarLetra.isChecked()){
+                } else if (binding.rdTrocarLetra.isChecked()) {
                     trocarLetra();
                     copiarVisibilidade();
-                }else{
+                } else {
                     String aviso = getString(R.string.aviso);
                     Toast.makeText(MainActivity.this, aviso, Toast.LENGTH_SHORT).show();
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
                 Toast.makeText(MainActivity.this, "Erro", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
@@ -74,15 +57,27 @@ public class MainActivity extends AppCompatActivity {
         });
 
         binding.imgBtnCopiar.setOnClickListener(view12 -> {
-            if (!binding.editText.getText().toString().isEmpty()){
+            if (!binding.editText.getText().toString().isEmpty()) {
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 clipboard.setText(binding.editText.getText().toString());
                 Toast.makeText(MainActivity.this, "Copiado com sucesso.", Toast.LENGTH_SHORT).show();
                 binding.imgBtnCopiar.setVisibility(View.INVISIBLE);
             }
         });
-    }
 
+        binding.rdTrocarLetra.setOnClickListener(view -> {
+            binding.layoutTrocarTxt.setVisibility(View.VISIBLE);
+        });
+        binding.rdMaiuscula.setOnClickListener(view -> {
+            binding.layoutTrocarTxt.setVisibility(View.INVISIBLE);
+        });
+        binding.rdAoContrario.setOnClickListener(view -> {
+            binding.layoutTrocarTxt.setVisibility(View.INVISIBLE);
+        });
+        binding.rdMinuscula.setOnClickListener(view -> {
+            binding.layoutTrocarTxt.setVisibility(View.INVISIBLE);
+        });
+    }
     private void copiarVisibilidade(){
         binding.imgBtnCopiar.setVisibility(View.VISIBLE);
     }
