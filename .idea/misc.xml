@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/isaac/AndroidStudioProjects/ConvertTexto/app/src/main/res/drawable/edit_text.xml" value="0.1335" />
+        <entry key="..\:/Users/isaac/AndroidStudioProjects/ConvertTexto/app/src/main/res/drawable/ic_copy.xml" value="0.1335" />
         <entry key="..\:/Users/isaac/AndroidStudioProjects/ConvertTexto/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
       </map>
     </option>
@@ -13,5 +14,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>
