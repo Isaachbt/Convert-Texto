@@ -10,4 +10,5 @@
     <string name="hintMudar">Mudar</string>
     <string name="hintPor">Por</string>
     <string name="editText">Digite a frase/palavra, aqui</string>
+    <string name="titulo">Modificando Texto</string>
 </resources>
